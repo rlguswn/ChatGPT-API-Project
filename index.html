@@ -1,39 +1,86 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>chat</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <div class="m-4">
-        <div class="flex border-2 border-black">
-            <h2>logo부분입니다</h2>
-        </div>
-        <div class="flex border-2 border-black">
-            <div class="w-1/2">
-                <!-- 이미지 슬라이드 -->
-                <img src="cat.jpg" alt="" class="p-12"/>
+    <div class="m-8 p-4 flex flex-col h-fit">
+        <div class="">
+            <div class="flex justify-between mb-4 border-b-2 border-black">
+                <h2 class="text-3xl text-left font-bold p-4 pl-8 text-blue-600 drop-shadow-lg">LOGO</h2>
+                <p class="font-light text-right p-4 pr-8 text-grey-400 drop-shadow-lg"> ⓒ AAA Corp. </p>
             </div>
-            <div class="w-1/2 p-12">
-                <form action="post" class="">
-                    <p class="mb-2">가고 싶은 여행지를 입력해주세요</p>
-                    <input type="text" class="border-2" autofocus />
-                    <button type="submit">전송</button>
-                </form>
+            <div class="flex">
+                <div class="flex mr-4 w-1/2 items-center">
+                    <img class="m-4 rounded-lg" src="https://cdn.pixabay.com/photo/2017/12/15/13/51/polynesia-3021072_1280.jpg" alt="pixabay 이미지입니다">
+                </div>
+                <div class="flex w-1/2 m-8">
+                    <form>
+                        <input type="text" placeholder="텍스트 입력" class="px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-r-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            전송
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="flex border-2 border-black p-4">
-            <div class="w-1/5 border-2 border-black">a<ul></ul></div>
-            <div class="w-1/5 border-2 border-black ml-4">b<ul></ul></div>
-            <div class="w-1/5 border-2 border-black ml-4">c<ul></ul></div>
-            <div class="w-1/5 border-2 border-black ml-4">d<ul></ul></div>
-            <div class="w-1/5 border-2 border-black ml-4">e<ul></ul></div>
+        <div class="m-8">
+            <p class="mt-8 mb-4">여행일정</p>
+            <div id="contents" placeholder="텍스트 입력" class="border-2 border-black h-fit rounded-lg"></div>
         </div>
-        
     </div>
-    <script src="./index.js"></script>
-    </body>
+    <script>
+        let $input = document.querySelector('input')
+        let $button = document.querySelector('button')
+
+        let url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`
+
+        let data = [{
+            "role": "system",
+            "content": "assistant는 제주 여행 전문가이다."
+        },{
+            "role": "user",
+            "content": "제주 여행 일정을 만들어줘"
+        }
+        ,{
+            "role": "user",
+            "content": "제주 3박4일 여행 일정을 만들어줘. 결과는 문장은 제외하고 간단하게 해줘."
+        }
+    ]
+
+        $button.addEventListener('click', e =>{
+            e.preventDefault()
+            userInputData = $input.value
+            $input.value = ''
+
+            data.push({
+                "role": "user",
+                "content": userInputData
+            })
+
+            chatGptAPI()
+        })
+
+        function chatGptAPI(){
+            fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+                redirect: "follow",
+            })
+            .then(res => res.json())
+            .then(res => {
+                console.log(res)
+                console.log(res.choices[0].message.content)
+                document.querySelector('#contents').innerText = res.choices[0].message.content
+            })
+        }
+    </script>
+</body>
 </html>
