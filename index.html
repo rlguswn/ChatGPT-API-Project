@@ -4,41 +4,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>chat</title>
+    <title>제주도 여행가이드</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <div class="m-8 p-4 flex flex-col h-fit">
         <div class="">
-            <div class="flex justify-between mb-4 border-b-2 border-black">
+            <!-- logo -->
+            <div class="flex justify-between mb-4">
                 <h2 class="text-3xl text-left font-bold p-4 pl-8 text-blue-600 drop-shadow-lg">LOGO</h2>
                 <p class="font-light text-right p-4 pr-8 text-grey-400 drop-shadow-lg"> ⓒ AAA Corp. </p>
             </div>
-            <div class="flex">
-                <div class="flex mr-4 w-1/2 items-center">
+
+            <div class="flex border-y-2 border-black p-8">
+                <!-- image area -->
+                <div class="flex mr-8 w-1/2 items-center">
                     <img class="m-4 rounded-lg" src="https://cdn.pixabay.com/photo/2017/12/15/13/51/polynesia-3021072_1280.jpg" alt="pixabay 이미지입니다">
                 </div>
-                <div class="flex w-1/2 m-8">
-                    <form>
-                        <input type="text" placeholder="텍스트 입력" class="px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-r-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            전송
-                        </button>
+
+                <!-- input area -->
+                <div class="w-1/2 pl-8 flex items-center">
+                    <form class="">
+                        <div class="flex w-full my-3 justify-between">
+                            <div class="mr-4">
+                                <p>여행 출발</p>
+                                <input type="date" class="px-4 py-1 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <p>여행 도착</p>
+                                <input type="date" class="px-4 py-1 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+                        
+                        <div class="w-full my-3 justify-between">
+                            <p>여행 중 꼭 가보고 싶은 장소</p>
+                            <div class="flex w-full">
+                                <input type="text" placeholder="텍스트를 입력해주세요." class="px-4 py-1 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full h-fit">
+                            </div>
+                        </div>
+
+                        <div class="w-full my-3 justify-between">
+                            <p>차량 렌트 여부</p>
+                            <div class="px-4 py-1 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full h-fit">
+                                <input type="radio" id="optionRent" name="rentGroup" value="optionRent">
+                                <label for="optionRent">차량을 렌트할 예정입니다.</label><br>
+                                <input type="radio" id="optionNotRent" name="rentGroup" value="optionNotRent">
+                                <label for="optionNotRent">차량을 렌트하지 않을예정입니다.</label>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-end">
+                            <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-l-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                전송
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="m-8">
-            <p class="mt-8 mb-4">여행일정</p>
-            <div id="contents" placeholder="텍스트 입력" class="border-2 border-black h-fit rounded-lg"></div>
+
+        <!-- answer area -->
+        <div class="m-4">
+            <p class="mb-4 font-bold">여행일정</p>
+            <textarea id="contents" placeholder="텍스트 입력" class="border-2 rounded-lg h-fit h-min-24 w-full py-2"></textarea>
         </div>
     </div>
+
     <script>
         let $input = document.querySelector('input')
         let $button = document.querySelector('button')
+        let $contents = document.querySelector('#contents')
 
         let url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`
 
+        // 학습 데이터
         let data = [{
             "role": "system",
             "content": "assistant는 제주 여행 전문가이다."
@@ -48,7 +87,7 @@
         }
         ,{
             "role": "user",
-            "content": "제주 3박4일 여행 일정을 만들어줘. 결과는 문장은 제외하고 간단하게 해줘."
+            "content": "제주 3박4일 여행 일정을 만들어줘. 결과는 문장은 제외하고 json형식으로 간단하게 해줘."
         }
     ]
 
@@ -56,6 +95,7 @@
             e.preventDefault()
             userInputData = $input.value
             $input.value = ''
+            $contents.innerText = ''
 
             data.push({
                 "role": "user",
@@ -78,7 +118,7 @@
             .then(res => {
                 console.log(res)
                 console.log(res.choices[0].message.content)
-                document.querySelector('#contents').innerText = res.choices[0].message.content
+                $contents.innerText = res.choices[0].message.content
             })
         }
     </script>
