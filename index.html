@@ -4,51 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>쉼표 ,</title>
+    <title>쉼표</title>
+    <link href="./style.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <div class="m-8 p-4 flex flex-col h-fit">
         <div class="">
-            <!-- logo -->
-            <div class="flex justify-between">
-                <div class="flex">
-                    <img src="logo.jpg" class="text-3xl text-left font-bold pb-4 pl-8"></img>
-                    <p class="text-xs text-left font-bold pt-6 pl-4">힘들고 지칠땐 ai 여행가이드와 함께 쉬어가세요</p>
-                </div>
-                <p class="font-light text-right pt-6 pr-8 text-grey-400 drop-shadow-lg"> ⓒ AAA Corp. </p>
-            </div>
+            <!-- header -->
+            <header>
+                <img src="logo.jpg"></img>
+                <p> ⓒ AAA Corp. </p>
+            </header>
 
-            <div class="flex border-y-2 border-black p-8">
+            <main>
                 <!-- image area -->
-                <div class="flex mr-8 w-1/2 items-center">
-                    <img class="m-4 rounded-lg" src="https://cdn.pixabay.com/photo/2017/12/15/13/51/polynesia-3021072_1280.jpg" alt="pixabay 이미지입니다">
+                <div>
+                    <img src="https://cdn.pixabay.com/photo/2017/12/15/13/51/polynesia-3021072_1280.jpg" alt="pixabay 이미지">
                 </div>
 
                 <!-- input area -->
-                <div class="w-1/2 pl-8 flex items-center">
-                    <form class="">
-                        <div class="flex w-full my-3 justify-between">
-                            <div class="mr-4">
-                                <p>여행 출발</p>
-                                <input type="date" class="px-4 py-1 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <div>
+                    <form>
+                        <div>
+                            <div id="inputDate">
+                                <span>여행 출발</span>
+                                <input type="date">
                             </div>
-                            <div>
-                                <p>여행 도착</p>
-                                <input type="date" class="px-4 py-1 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <div id="inputDate">
+                                <span>여행 도착</span>
+                                <input type="date">
                             </div>
                         </div>
                         
-                        <div class="w-full my-3 justify-between">
+                        <div id="inputText">
                             <p>여행 중 꼭 가보고 싶은 장소</p>
-                            <div class="flex w-full">
-                                <input type="text" placeholder="텍스트를 입력해주세요." class="px-4 py-1 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full h-fit">
-                            </div>
+                            <input type="text" placeholder="텍스트를 입력해주세요.">
                         </div>
 
-                        <div class="w-full my-3 justify-between">
+                        <div>
                             <p>차량 렌트 여부</p>
-                            <div class="px-4 py-1 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full h-fit">
+                            <div id="inputRadio">
                                 <input type="radio" id="optionRent" name="rentGroup" value="optionRent">
                                 <label for="optionRent">차량을 렌트할 예정입니다.</label><br>
                                 <input type="radio" id="optionNotRent" name="rentGroup" value="optionNotRent">
@@ -63,7 +59,7 @@
                         </div>
                     </form>
                 </div>
-            </div>
+            </main>
         </div>
 
         <!-- answer area -->

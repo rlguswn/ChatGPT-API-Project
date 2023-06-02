@@ -1,0 +1,90 @@
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+header img {
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+}
+
+header p {
+    font-weight: 600;
+    text-align: right;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    color: #cbd5e0;
+}
+
+main {
+    display: flex;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-color: black;
+    padding: 1rem;
+}
+
+main div {
+    display: flex;
+    padding: 1rem;
+    width: 50%;
+    align-items: center;
+}
+
+main div img {
+    border-radius: 5%;
+}
+
+main div form div {
+    display: flex;
+    width: 100%;
+}
+
+#inputDate {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#inputDate span {
+    width: 100%;
+    padding-left: 10%;
+}
+
+#inputText {
+    display: flex;
+    flex-direction: column;
+}
+
+#inputRadio {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border: 2px solid #ccc;
+    border-color: #ccc;
+    border-radius: 0.4rem 0 0 0.4rem;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+    width: 100%;
+    height: fit-content;
+}
+
+input[type="date"],
+input[type="text"] {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border: 2px solid #ccc;
+    border-radius: 0.4rem 0 0 0.4rem;
+    width: 100%;
+    height: fit-content;
+}
+
+input[type="date"]:focus,
+input[type="text"]:focus {
+    box-shadow: 0 0 0 2px #4285f4;
+    outline: none;
+    border-color: #4285f4;
+}
