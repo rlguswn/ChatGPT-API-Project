@@ -1,17 +1,9 @@
 let $input = document.querySelector('input')
+let $rentCarBtn = document.querySelector('rentCar')
 let $button = document.querySelector('button')
 let $contents = document.querySelector('#contents')
 
 let url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`
-
-// CSS 클래스를 추가하는 function
-function addClass(element, className) {
-    if (element.classList) {
-        element.classList.add(className);
-    } else {
-        element.className += ' ' + className;
-    }
-}
 
 // 학습 데이터
 let data = [{
@@ -20,8 +12,7 @@ let data = [{
 },{
     "role": "user",
     "content": "제주 여행 일정을 만들어줘"
-}
-,{
+},{
     "role": "user",
     "content": "제주 3박4일 여행 일정을 만들어줘. 결과는 문장은 제외하고 key는 날짜, value는 여행 계획을 서술한 json형식으로 간단하게 해줘."
 }]
@@ -54,14 +45,14 @@ function chatGptAPI(){
     .then(res => {
         // console.log(res)
         console.log(res.choices[0].message.content)
-        // $contents.innerText = res.choices[0].message.content
         jsonParse(res.choices[0].message.content)
     })
 }
 
+// json 값만 추출하기 위한 정규표현식 선언
 const pattern = /({[\s\S]*?})/g
 
-// 수신한 문자열에서 json 형식만 추출
+// 수신한 문자열에서 json 값만 추출
 function jsonRefactoring(string){
     let match = string.match(pattern)
     if (match) {
@@ -72,14 +63,13 @@ function jsonRefactoring(string){
         console.log(jsonData)
         return jsonData
     } else {
-        console.log('Error, JSON 데이터를 찾을 수 없습니다.')
+        throw new Error('JSON 데이터를 찾을 수 없습니다.')
     }
 }
 
 // 가공된 json값을 table에 출력
 function jsonParse(jsonString){
     jsonData = jsonRefactoring(jsonString)
-    // let jsonData = JSON.parse(jsonString)
 
     // 출력 내용 초기화
     $contents.innerText = ''
