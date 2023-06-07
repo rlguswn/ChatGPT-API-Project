@@ -5,74 +5,75 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>쉼표</title>
-    <link href="./style.css" rel="stylesheet">
+    <link href="./src/style.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <!-- top header -->
     <header>
-        <img src="logo.jpg"></img>
+        <img src="./assets/logo.jpg" class="headerImg"></img>
         <p> ⓒ AAA Corp. </p>
     </header>
 
     <!-- main area -->
     <main>
-        <!-- main leftside -->
         <section>
+            <!-- main leftside -->
             <div>
-                <img src="https://cdn.pixabay.com/photo/2017/12/15/13/51/polynesia-3021072_1280.jpg" alt="pixabay 이미지">
+                <img src="https://cdn.pixabay.com/photo/2017/12/15/13/51/polynesia-3021072_1280.jpg" alt="pixabay 여행이미지" class="mainImg">
             </div>
 
-            <form>
+            <!-- main rightside -->
+            <form id="userInputForm">
                 <div>
-                    <div class="inputDate">
+                    <div>
                         <span>여행 출발</span>
-                        <input type="date">
+                        <input type="date" class="dateDepart">
                     </div>
-                    <div class="inputDate">
+                    <div>
                         <span>여행 도착</span>
-                        <input type="date">
+                        <input type="date" class="dateArrive">
                     </div>
                 </div>
                 
                 <div class="inputText">
                     <span>여행 중 꼭 가보고 싶은 장소</span>
-                    <input type="text" placeholder="텍스트를 입력해주세요.">
+                    <input type="text" class="attraction" placeholder="텍스트를 입력해주세요.">
                 </div>
 
                 <div class="inputRadio">
                     <span>차량 렌트 여부</span>
                     <div>
                         <div>
-                            <input type="radio" id="rent" name="rentCar" value="rent">
+                            <input type="radio" id="rent" name="carStatus" value="rent">
                             <label for="rent">차량을 렌트할 예정입니다.</label>
                         </div>
                         <div>
-                            <input type="radio" id="notRent" name="rentCar" value="notRent">
+                            <input type="radio" id="notRent" name="carStatus" value="notRent">
                             <label for="notRent">차량을 렌트하지 않을예정입니다.</label>
                         </div>
                     </div>
                 </div>
 
                 <div class="submitArea">
-                    <button type="submit">
-                        전송
+                    <button type="submit" class="makePlan">
+                        여행 계획 만들기
                     </button>
                 </div>
             </form>
         </section>
 
         <!-- main downside answer area -->
-        <div class="mainDownside">
+        <section class="mainDownside">
             <span>여행일정</span>
-            <table id="contents">
+            <table id="answer">
                 <tr>
                     <th>전송 버튼을 누르면 이곳에 여행일정이 출력됩니다.</th>
                 </tr>
             </table>
-        </div>
+        </section>
     </main>
 
-    <script src="./index.js"></script>
+    <script src="./src/index.js"></script>
 </body>
 </html>
