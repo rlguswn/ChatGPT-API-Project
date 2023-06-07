@@ -1,28 +1,26 @@
+import data from "./data.js";
+
 const $dateDepart = document.querySelector('.dateDepart')
 const $dateArrive = document.querySelector('.dateArrive')
 const $attraction = document.querySelector('.attraction')
-const $carStatus = document.querySelectorAll('input[name="carStatus"]')
+const $carStatus = document.querySelector('input[name="carStatus"]')
 const $button = document.querySelector('.makePlan')
 const $answer = document.querySelector('#answer')
+let carStatusChecked = ''
 
 const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`
-
-// 학습 데이터
-const data = [{
-    "role": "system",
-    "content": "assistant는 제주 여행 전문가이다."
-},{
-    "role": "user",
-    "content": "제주 여행 일정을 만들어줘"
-},{
-    "role": "user",
-    "content": "제주 3박4일 여행 일정을 만들어줘. 결과는 문장은 제외하고 key는 날짜, value는 여행 계획을 서술한 json형식으로 간단하게 해줘."
-}]
 
 // 여행 계획 만들기 버튼이 눌렸을 때 EventListener
 $button.addEventListener('click', e =>{
     e.preventDefault()
-    userInputData = $dateDepart.value + '부터' + $dateArrive.value + '까지의 기간동안 ' + $attraction.value + '를 포함하는 제주 여행 계획을 key는 날짜, value는 여행 계획을 서술한 json형식으로 작성해 줘.'
+
+    if ($carStatus) {
+        carStatusChecked += '차량을 렌트할거야'
+    } else {
+        carStatusChecked += '차량은 렌트하지 않을거야'
+    }
+
+    const userInputData = $dateDepart.value + '부터' + $dateArrive.value + '까지의 기간동안 ' + $attraction.value + '를 포함하는 제주 여행 계획을 key는 날짜, value는 여행 계획을 서술한 json형식으로 작성해 줘.'
     $answer.innerText = '여행 계획을 작성중입니다.'
 
     data.push({
@@ -76,7 +74,7 @@ function jsonRefactoring(string){
 
 // 가공된 json값을 table에 출력
 function jsonParse(jsonString){
-    jsonData = jsonRefactoring(jsonString)
+    const jsonData = jsonRefactoring(jsonString)
 
     // 출력 내용 초기화
     $answer.innerText = ''

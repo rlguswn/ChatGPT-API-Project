@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>쉼표</title>
-    <link href="./src/style.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <!-- top header -->
     <header>
-        <img src="./assets/logo.jpg" class="headerImg"></img>
+        <img src="./assets/img/logo.jpg" class="headerImg"></img>
         <p> ⓒ AAA Corp. </p>
     </header>
 
@@ -45,12 +45,8 @@
                     <span>차량 렌트 여부</span>
                     <div>
                         <div>
-                            <input type="radio" id="rent" name="carStatus" value="rent">
+                            <input type="checkbox" id="rent" name="carStatus" value="">
                             <label for="rent">차량을 렌트할 예정입니다.</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="notRent" name="carStatus" value="notRent">
-                            <label for="notRent">차량을 렌트하지 않을예정입니다.</label>
                         </div>
                     </div>
                 </div>
@@ -74,6 +70,6 @@
         </section>
     </main>
 
-    <script src="./src/index.js"></script>
+    <script type="module" src="./assets/js/index.js"></script>
 </body>
 </html>
