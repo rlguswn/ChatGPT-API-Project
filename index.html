@@ -17,55 +17,50 @@
 
     <!-- main area -->
     <main>
-
-        <!-- main upside -->
-        <div class="mainUpside">
-            <!-- main leftside -->
+        <!-- main leftside -->
+        <section>
             <div>
                 <img src="https://cdn.pixabay.com/photo/2017/12/15/13/51/polynesia-3021072_1280.jpg" alt="pixabay 이미지">
             </div>
 
-            <!-- main rightside -->
-            <div>
-                <form>
+            <form>
+                <div>
+                    <div class="inputDate">
+                        <span>여행 출발</span>
+                        <input type="date">
+                    </div>
+                    <div class="inputDate">
+                        <span>여행 도착</span>
+                        <input type="date">
+                    </div>
+                </div>
+                
+                <div class="inputText">
+                    <span>여행 중 꼭 가보고 싶은 장소</span>
+                    <input type="text" placeholder="텍스트를 입력해주세요.">
+                </div>
+
+                <div class="inputRadio">
+                    <span>차량 렌트 여부</span>
                     <div>
-                        <div class="inputData">
-                            <span>여행 출발</span>
-                            <input type="date">
-                        </div>
-                        <div class="inputData">
-                            <span>여행 도착</span>
-                            <input type="date">
-                        </div>
-                    </div>
-                    
-                    <div class="inputText">
-                        <p>여행 중 꼭 가보고 싶은 장소</p>
-                        <input type="text" placeholder="텍스트를 입력해주세요.">
-                    </div>
-
-                    <div class="inputRadio">
-                        <p>차량 렌트 여부</p>
                         <div>
-                            <div>
-                                <input type="radio" id="rent" name="rentCar" value="rent">
-                                <label for="rent">차량을 렌트할 예정입니다.</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="notRent" name="rentCar" value="notRent">
-                                <label for="notRent">차량을 렌트하지 않을예정입니다.</label>
-                            </div>
+                            <input type="radio" id="rent" name="rentCar" value="rent">
+                            <label for="rent">차량을 렌트할 예정입니다.</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="notRent" name="rentCar" value="notRent">
+                            <label for="notRent">차량을 렌트하지 않을예정입니다.</label>
                         </div>
                     </div>
+                </div>
 
-                    <div class="submitArea">
-                        <button type="submit">
-                            전송
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
+                <div class="submitArea">
+                    <button type="submit">
+                        전송
+                    </button>
+                </div>
+            </form>
+        </section>
 
         <!-- main downside answer area -->
         <div class="mainDownside">

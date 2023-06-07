@@ -1,12 +1,12 @@
 let $input = document.querySelector('input')
-let $rentCarBtn = document.querySelector('rentCar')
+let $rentInput = document.querySelector('rentCar')
 let $button = document.querySelector('button')
 let $contents = document.querySelector('#contents')
 
 let url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`
 
 // 학습 데이터
-let data = [{
+const data = [{
     "role": "system",
     "content": "assistant는 제주 여행 전문가이다."
 },{

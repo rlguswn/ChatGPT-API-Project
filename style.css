@@ -24,42 +24,50 @@ header > p {
     color: #cbd5e0;
 }
 
-.mainUpside {
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+main > section {
     display: flex;
     border-top-width: 2px;
     border-bottom-width: 2px;
     border-color: black;
     padding: 1rem;
-}
-
-.mainUpside > div {
-    display: flex;
-    padding: 1rem;
-    width: 50%;
     align-items: center;
 }
 
-.mainUpside > div > img {
+main > section > div {
+    width: 50%;
+    padding: 1rem;
+}
+
+main > section > div > img {
     border-radius: 5%;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.mainUpside > div > form > div {
+main > section > form {
+    width: 50%;
+    padding: 1rem;
+}
+
+main > section > form > div {
     display: flex;
     width: 100%;
 }
 
 .inputDate {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    width: 50%;
+    justify-content: space-between;
 }
 
 .inputDate > span {
     width: 100%;
-    padding-left: 10%;
+    text-align: center;
 }
 
 .inputText {
