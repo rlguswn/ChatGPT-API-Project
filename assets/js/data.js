@@ -1,4 +1,4 @@
-const data = [
+export const data = [
     {
         "role": "system",
         "content": "assistant는 제주 여행 전문가이다."
@@ -25,7 +25,6 @@ const data = [
     },
     {
         "role": "user",
-        "content": "제주 3박4일 여행 일정을 만들어줘. 결과는 문장은 제외하고 key는 날짜, value는 여행 계획을 서술한 json형식으로 간단하게 해줘."
+        "content": "제주 3박4일 여행 일정을 만들어줘. 결과는 문장은 제외하고 key는 날짜, value는 오전, 오후, 저녁으로 나눠서 서술한 여행계획을 json형식으로 간단하게 해줘."
     }
 ]
-export default data

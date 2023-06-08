@@ -1,4 +1,4 @@
-import data from "./data.js";
+import {data} from "./data.js";
 
 const $dateDepart = document.querySelector('.dateDepart')
 const $dateArrive = document.querySelector('.dateArrive')
