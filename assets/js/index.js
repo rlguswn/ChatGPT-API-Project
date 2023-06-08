@@ -1,4 +1,5 @@
 import {data} from "./data.js";
+import {chatGptAPI} from "./chatGPTAPI.js";
 
 const $dateDepart = document.querySelector('.dateDepart')
 const $dateArrive = document.querySelector('.dateArrive')
@@ -6,13 +7,13 @@ const $attraction = document.querySelector('.attraction')
 const $carStatus = document.querySelector('input[name="carStatus"]')
 const $button = document.querySelector('.makePlan')
 const $answer = document.querySelector('#answer')
-let carStatusChecked = ''
 
 const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`
 
-// 여행 계획 만들기 버튼이 눌렸을 때 EventListener
+// 사용자 입력을 토대로 질문을 작성
 $button.addEventListener('click', e =>{
     e.preventDefault()
+    let carStatusChecked
 
     if ($carStatus) {
         carStatusChecked += '차량을 렌트할거야'
@@ -36,26 +37,8 @@ $button.addEventListener('click', e =>{
     chatGptAPI()
 })
 
-// chatGptAPI
-function chatGptAPI(){
-    fetch(url, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-        redirect: "follow",
-    })
-    .then(res => res.json())
-    .then(res => {
-        // console.log(res)
-        console.log(res.choices[0].message.content)
-        jsonParse(res.choices[0].message.content)
-    })
-}
-
 // json값을 table에 출력
-function jsonParse(jsonString){
+function answerOutput(jsonString){
     const jsonData = JSON.parse(jsonString)
 
     // 출력 내용 초기화
