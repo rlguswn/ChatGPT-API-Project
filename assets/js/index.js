@@ -54,25 +54,7 @@ function chatGptAPI(){
     })
 }
 
-// json 값만 추출하기 위한 정규표현식 선언
-const pattern = /({[\s\S]*?})/g
-
-// 수신한 문자열에서 json 값만 추출
-// function jsonRefactoring(string){
-//     let match = string.match(pattern)
-//     if (match) {
-//         console.log(string)
-//         let data = match[0]
-//         console.log(data)
-//         let jsonData = JSON.parse(data)
-//         console.log(jsonData)
-//         return jsonData
-//     } else {
-//         throw new Error('JSON 데이터를 찾을 수 없습니다.')
-//     }
-// }
-
-// 가공된 json값을 table에 출력
+// json값을 table에 출력
 function jsonParse(jsonString){
     const jsonData = JSON.parse(jsonString)
 
