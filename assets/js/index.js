@@ -58,23 +58,23 @@ function chatGptAPI(){
 const pattern = /({[\s\S]*?})/g
 
 // 수신한 문자열에서 json 값만 추출
-function jsonRefactoring(string){
-    let match = string.match(pattern)
-    if (match) {
-        console.log(string)
-        let data = match[0]
-        console.log(data)
-        let jsonData = JSON.parse(data)
-        console.log(jsonData)
-        return jsonData
-    } else {
-        throw new Error('JSON 데이터를 찾을 수 없습니다.')
-    }
-}
+// function jsonRefactoring(string){
+//     let match = string.match(pattern)
+//     if (match) {
+//         console.log(string)
+//         let data = match[0]
+//         console.log(data)
+//         let jsonData = JSON.parse(data)
+//         console.log(jsonData)
+//         return jsonData
+//     } else {
+//         throw new Error('JSON 데이터를 찾을 수 없습니다.')
+//     }
+// }
 
 // 가공된 json값을 table에 출력
 function jsonParse(jsonString){
-    const jsonData = jsonRefactoring(jsonString)
+    const jsonData = JSON.parse(jsonString)
 
     // 출력 내용 초기화
     $answer.innerText = ''
@@ -88,9 +88,13 @@ function jsonParse(jsonString){
             nameCell.style.padding = "8px"
             nameCell.style.borderBottom = "1px solid #ddd"
             nameCell.style.borderRight = "1px solid #ddd"
-            
+
             let valueCell = row.insertCell(1)
-            valueCell.innerText = jsonData[key]
+            valueCell.innerText = (
+                "오전: " + jsonData[key]["오전"] + "\n" + 
+                "오후: " + jsonData[key]["오후"] + "\n" + 
+                "저녁: " + jsonData[key]["저녁"]
+            )
             valueCell.style.padding = "8px"
             valueCell.style.borderBottom = "1px solid #ddd"
         }

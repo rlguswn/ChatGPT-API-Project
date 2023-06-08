@@ -19,12 +19,28 @@ export const data = [
         }),
     },
     {
-        role: "user",
-        content:
+        "role": "user",
+        "content":
             "무조건 위와 같은 형식으로 일정을 작성해줘",
     },
     {
         "role": "user",
         "content": "제주 3박4일 여행 일정을 만들어줘. 결과는 문장은 제외하고 key는 날짜, value는 오전, 오후, 저녁으로 나눠서 서술한 여행계획을 json형식으로 간단하게 해줘."
+    },
+    {
+        "role": "user",
+        "content": "답변은 반드시 json형식으로 해줘"
+    },
+    {
+        "role": "user",
+        "content": "여행 첫날의 오전은 여행을 출발하는 일정으로 작성해줘"
+    },
+    {
+        "role": "user",
+        "content": "여행 마지막날의 저녁은 여행에서 돌아오는 일정으로 작성해줘"
+    },
+    {
+        "role": "user",
+        "content": "key값인 날짜는 ~년 ~월 ~일 형식으로 작성해줘"
     }
 ]
