@@ -15,6 +15,8 @@ $button.addEventListener('click', e =>{
         alert("여행을 출발하는 날짜를 입력해주세요.")
     } else if ($dateArrive.value.trim() === "") {
         alert("여행에서 돌아오는 날짜를 입력해주세요.")
+    } else if ($dateDepart.value > $dateArrive.value) {
+        alert("여행 도착일을 출발일 이후 날짜로 입력해주세요")
     } else if ($destination.value.trim() === "") {
         alert("원하는 여행지를 입력해주세요.")
     }
