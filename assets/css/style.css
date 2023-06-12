@@ -58,16 +58,11 @@ main > section:first-child {
 #userInputForm > div {
     display: flex;
     width: 100%;
+    padding: 1rem;
 }
 
-.inputDate {
-    width: 50%;
-    justify-content: space-between;
-}
-
-.inputDate > span {
-    width: 100%;
-    text-align: center;
+.formDepart {
+    padding-right: 1rem;
 }
 
 .inputText {
