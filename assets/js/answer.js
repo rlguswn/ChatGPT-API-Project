@@ -13,9 +13,7 @@ export function answerOutput(jsonString){
 
             let nameCell = row.insertCell(0)
             nameCell.innerText = key
-            nameCell.style.padding = "8px"
-            nameCell.style.borderBottom = "1px solid #ddd"
-            nameCell.style.borderRight = "1px solid #ddd"
+            nameCell.classList.add("nameCell")
 
             let valueCell = row.insertCell(1)
             valueCell.innerText = (
@@ -23,8 +21,7 @@ export function answerOutput(jsonString){
                 "오후: " + jsonData[key]["오후"] + "\n" + 
                 "저녁: " + jsonData[key]["저녁"]
             )
-            valueCell.style.padding = "8px"
-            valueCell.style.borderBottom = "1px solid #ddd"
+            valueCell.classList.add("valueCell")
         }
     }
 }
