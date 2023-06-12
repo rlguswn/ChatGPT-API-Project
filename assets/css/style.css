@@ -18,7 +18,7 @@ header {
 
 .headerImg {
     margin-left: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 8px;
 }
 
 header > p {
@@ -94,8 +94,16 @@ input[type="text"]:focus {
 }
 
 .submitArea {
+    width: 100%;
     margin-top: 1rem;
-    justify-content: flex-end;
+    display: flex;
+    justify-content: space-between;
+}
+
+.submitArea > span {
+    text-align: left;
+    font-weight: 600;
+    color: #cbd5e0;
 }
 
 button[type="submit"] {

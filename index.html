@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>여행 계획 생성기</title>
     <link href="./assets/css/style.css" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -22,17 +23,17 @@
             <form id="userInputForm">
                 <div>
                     <div>
-                        <span>여행 출발</span>
+                        <span>*여행 출발</span>
                         <input type="date" class="dateDepart">
                     </div>
                     <div>
-                        <span>여행 도착</span>
+                        <span>*여행 도착</span>
                         <input type="date" class="dateArrive">
                     </div>
                 </div>
                 
                 <div class="inputText">
-                    <span>원하는 여행지</span>
+                    <span>*원하는 여행지</span>
                     <input type="text" class="destination" placeholder="텍스트를 입력해주세요.">
                 </div>
                 
@@ -42,6 +43,7 @@
                 </div>
 
                 <div class="submitArea">
+                    <span>* 필수입력</span>
                     <button type="submit" class="makePlan">
                         여행 계획 만들기
                     </button>
