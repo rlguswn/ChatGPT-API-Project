@@ -19,7 +19,7 @@ header {
 /* 헤더 이미지 */
 .headerImg {
     margin-left: 1rem;
-    padding-bottom: 8px;
+    padding-bottom: 2px;
 }
 
 header > p {
