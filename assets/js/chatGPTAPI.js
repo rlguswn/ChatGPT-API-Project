@@ -1,5 +1,6 @@
 import {data} from "./data.js"
 import {answerOutput} from "./answer.js"
+import {hideLoadingSpinner} from "./loading.js"
 
 const url = "https://estsoft-openai-api.jejucodingcamp.workers.dev/"
 
@@ -22,5 +23,6 @@ export function chatGptAPI(userInputData){
         // console.log(res)
         console.log(res.choices[0].message.content)
         answerOutput(res.choices[0].message.content)
+        hideLoadingSpinner()
     })
 }
