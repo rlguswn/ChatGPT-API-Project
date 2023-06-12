@@ -9,7 +9,7 @@ const $button = document.querySelector('.makePlan')
 // 사용자 입력을 토대로 질문 텍스트 작성
 $button.addEventListener('click', e =>{
     e.preventDefault()
-    
+
     const userInputData = (`
         ${$dateDepart.value}, 
         ${$dateArrive.value}, 

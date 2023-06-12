@@ -1,7 +1,7 @@
 import {data} from "./data.js"
 import {answerOutput} from "./answer.js"
 
-const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`
+const url = "https://estsoft-openai-api.jejucodingcamp.workers.dev/"
 
 export function chatGptAPI(userInputData){
     data.push({

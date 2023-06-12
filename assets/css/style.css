@@ -81,7 +81,7 @@ input[type="text"] {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
     border: 2px solid #ccc;
-    border-radius: 0.4rem 0 0 0.4rem;
+    border-radius: 0.4rem;
     width: 100%;
     height: fit-content;
 }
@@ -105,7 +105,7 @@ button[type="submit"] {
     padding-bottom: 0.5rem;
     background-color: #4285f4;
     color: #fff;
-    border-radius: 0.4rem 0 0 0.4rem;
+    border-radius: 0.4rem;
     outline: none;
 }
 
