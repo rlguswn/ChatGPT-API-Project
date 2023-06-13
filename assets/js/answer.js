@@ -1,6 +1,9 @@
 const $answer = document.querySelector('#answer')
 
-// json값을 table에 출력
+/**
+* chatGPTAPI 응답을 양식에 맞춰 테이블 형태로 생성 
+* @param {array} jsonString 사용자 입력으로 생성된 질문
+*/
 export function answerOutput(jsonString){
     const jsonData = JSON.parse(jsonString)
 
