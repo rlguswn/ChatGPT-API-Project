@@ -1,3 +1,4 @@
+import {data} from "./data.js"
 import {chatGptAPI} from "./chatGPTAPI.js"
 import {showLoadingSpinner} from "./loading.js"
 
@@ -32,6 +33,6 @@ $button.addEventListener('click', e =>{
 
     console.log(userInputData)
 
-    chatGptAPI(userInputData)
+    chatGptAPI(data, userInputData)
     }
 })
