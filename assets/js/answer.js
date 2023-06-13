@@ -1,3 +1,5 @@
+import {hideLoadingSpinner} from "./loading.js"
+
 const $answer = document.querySelector('#answer')
 
 /**
@@ -26,5 +28,6 @@ export function answerOutput(jsonString){
             )
             valueCell.classList.add("valueCell")
         }
+        hideLoadingSpinner()
     }
 }

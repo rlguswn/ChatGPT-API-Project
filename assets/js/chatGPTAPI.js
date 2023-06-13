@@ -31,9 +31,7 @@ export function chatGptAPI(data, userInputData){
         .catch((err) => {
             console.log(err)
             alert("API 통신중 에러가 발생했습니다.")
-        })
-        .finally(
             hideLoadingSpinner()
-        )
+        })
     }
 }
