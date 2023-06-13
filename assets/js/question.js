@@ -27,8 +27,8 @@ $button.addEventListener('click', e =>{
         const userInputData = (`
         ${$dateDepart.value}, 
         ${$dateArrive.value}, 
-        ${$attraction.value}, 
-        ${$destination.value}
+        ${$destination.value}, 
+        ${$attraction.value}
     `)
 
     console.log(userInputData)
