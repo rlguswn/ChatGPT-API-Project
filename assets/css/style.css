@@ -5,7 +5,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #ff0000;
+    background-image: url(/assets/img/background.jpg);
+    background-repeat : no-repeat;
+    background-size: cover;
     width: fit-content;
     height: fit-content;
 }
@@ -15,11 +17,15 @@ header {
     top: 0;
     margin-top: 1rem;
     display: flex;
-    width: 45rem;
     height: 4rem;
-    background-color: rgb(255, 255, 255);
     justify-content: space-between;
     line-height: 4rem;
+}
+
+header,
+main {
+    width: 45rem;
+    background-color: rgba(255, 255, 255, 0.90);
 }
 
 /* 헤더 이미지 */
@@ -36,12 +42,10 @@ header > p {
 }
 
 main {
-    width: 45rem;
     margin-top: 5.5rem;
     align-items: center;
     display: flex;
     flex-direction: column;
-    background-color: rgb(255, 255, 255);
 }
 
 main > section:first-child {
@@ -102,7 +106,7 @@ input[type="text"]:focus {
 .submitArea > span {
     text-align: left;
     font-weight: 600;
-    color: #cbd5e0;
+    color: #00000073;
 }
 
 .submitArea > div {
