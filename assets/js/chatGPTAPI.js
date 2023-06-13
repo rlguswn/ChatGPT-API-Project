@@ -26,7 +26,6 @@ export function chatGptAPI(data, userInputData){
         })
         .then(res => res.json())
         .then(res => {
-            // console.log(res)
             console.log(res.choices[0].message.content)
             answerOutput(res.choices[0].message.content)
 
