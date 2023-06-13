@@ -9,7 +9,7 @@ const url = "https://estsoft-openai-api.jejucodingcamp.workers.dev/"
 * @param {string} userInputData 사용자 입력으로 생성된 질문
 * @param {array} data 사용자 입력으로 생성된 질문을 저장할 곳
 */
-export function chatGptAPI(userInputData){
+export function chatGptAPI(data, userInputData){
     if (userInputData) {
         data.push({
             "role": "user",
