@@ -1,4 +1,3 @@
-import {data} from "./data.js"
 import {answerOutput} from "./answer.js"
 import {hideLoadingSpinner} from "./loading.js"
 
@@ -28,8 +27,13 @@ export function chatGptAPI(data, userInputData){
         .then(res => {
             console.log(res.choices[0].message.content)
             answerOutput(res.choices[0].message.content)
-
-            hideLoadingSpinner()
         })
+        .catch((err) => {
+            console.log(err)
+            alert("API 통신중 에러가 발생했습니다.")
+        })
+        .finally(
+            hideLoadingSpinner()
+        )
     }
 }
