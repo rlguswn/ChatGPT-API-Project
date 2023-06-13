@@ -10,27 +10,28 @@ body {
 }
 
 header {
-    margin-top: 4rem;
+    position: fixed;
+    top: 0;
     display: flex;
-    width: 100%;
-    justify-content: space-between;
+    height: 4rem;
+    background: rgb(255, 255, 255);
+    line-height: 4rem;
 }
 
 /* 헤더 이미지 */
 .headerImg {
-    margin-left: 1rem;
-    padding-bottom: 2px;
+    margin: 0.5rem;
+    margin-right: 9rem;
 }
 
 header > p {
     font-weight: 600;
     text-align: right;
-    padding-top: 1rem;
-    padding-right: 1rem;
-    color: #cbd5e0;
+    color: #c4c4c4;
 }
 
 main {
+    margin-top: 4rem;
     display: flex;
     flex-direction: column;
 }
