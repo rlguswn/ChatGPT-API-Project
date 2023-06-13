@@ -31,7 +31,9 @@ main {
 /* 헤더 이미지 */
 .headerImg {
     margin: 0.5rem;
-    margin-right: 9rem;
+    margin-left: 1rem;
+    margin-right: 7rem;
+    padding: 0.3rem;
 }
 
 header > p {
