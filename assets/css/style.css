@@ -139,10 +139,9 @@ button[type="submit"]:focus {
 
 /* AI로 생성한 답변테이블 */
 #answer {
-    border-width: 2px;
-    border-radius: 0.5rem;
+    border: 2px solid #ccc;
     height: fit-content;
-    min-height: 6rem;
+    min-height: 14rem;
     width: 100%;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
