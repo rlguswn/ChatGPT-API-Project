@@ -36,11 +36,10 @@ main {
     padding: 0.3rem;
 }
 
-header > p {
-    font-weight: 600;
-    text-align: right;
+.githubIcon {
+    margin-top: 0.5rem;
     margin-right: 1rem;
-    color: #c4c4c4;
+    height: 3rem;
 }
 
 main {
