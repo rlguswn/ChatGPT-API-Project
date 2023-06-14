@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>여행 계획 생성기</title>
+
+    <!-- 스타일 -->
     <link href="./assets/css/style.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <!-- top header -->
+    <!-- 헤더 -->
     <header>
         <img src="./assets/img/logo.png" class="headerImg"></img alt="여행 계획 생성기 로고이미지">
         <a href="https://github.com/rlguswn/ChatGPT-API-Project">
@@ -17,10 +19,10 @@
         </a>
     </header>
 
-    <!-- main area -->
+    <!-- 메인 -->
     <main>
+        <!-- 사용자 입력 폼 -->
         <section>
-            <!-- main upside input area -->
             <form id="userInputForm">
                 <div>
                     <div class="formDepart">
@@ -55,7 +57,7 @@
             </form>
         </section>
 
-        <!-- main downside answer area -->
+        <!-- 답변 테이블 -->
         <section class="mainDownside">
             <span>여행일정</span>
             <table id="answer">
