@@ -25,11 +25,11 @@ $button.addEventListener('click', e =>{
         showLoadingSpinner()
 
         const userInputData = (`
-        ${$dateDepart.value}, 
-        ${$dateArrive.value}, 
-        ${$destination.value}, 
-        ${$attraction.value}
-    `)
+            ${$dateDepart.value}, 
+            ${$dateArrive.value}, 
+            ${$destination.value}, 
+            ${$attraction.value}
+        `)
 
     console.log(userInputData)
 
