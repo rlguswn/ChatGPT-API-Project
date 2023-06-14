@@ -22,7 +22,11 @@ export function answerOutput(jsonString){
             nameCell.classList.add("nameCell")
 
             let valueCell = row.insertCell(1)
-            valueCell.innerText = jsonData[key]
+            valueCell.innerText = ""
+            jsonData[key].forEach(item => {
+                valueCell.innerText += item + "\n"
+            })
+            // valueCell.innerText = jsonData[key]
             valueCell.classList.add("valueCell")
         }
         hideLoadingSpinner()
