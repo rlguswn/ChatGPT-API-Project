@@ -3,7 +3,7 @@ import {hideLoadingSpinner} from "./loading.js"
 
 const url = "https://estsoft-openai-api.jejucodingcamp.workers.dev/"
 
-/**
+/** void chatGptAPI
 * 사용자 입력으로 생성된 질문을 받아 API 요청
 * @param {string} userInputData 사용자 입력으로 생성된 질문
 * @param {array} data 사용자 입력으로 생성된 질문을 저장할 곳
