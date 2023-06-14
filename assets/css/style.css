@@ -152,12 +152,15 @@ button[type="submit"]:focus {
 
 /* AI로 생성한 답변테이블 */
 #answer {
+    display: flex;
     border: 2px solid #ccc;
     height: fit-content;
     min-height: 14rem;
     width: 100%;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    text-align: center;
+    justify-content: center;
 }
 
 .nameCell {
