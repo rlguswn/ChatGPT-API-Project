@@ -1,6 +1,6 @@
-import {hideLoadingSpinner} from "./loading.js"
+import {hideLoading} from "./loading.js"
 
-const $answer = document.querySelector('#answer')
+export const $answer = document.querySelector('#answer')
 
 /** void answerOutput
  * chatGPTAPI 응답을 양식에 맞춰 테이블 형태로 생성 
@@ -8,7 +8,7 @@ const $answer = document.querySelector('#answer')
 */
 export function answerOutput(jsonString){
     const jsonData = JSON.parse(jsonString)
-
+    
     $answer.innerText = ''
     
     for (let key in jsonData){
@@ -26,6 +26,6 @@ export function answerOutput(jsonString){
             })
             valueCell.classList.add("valueCell")
         }
-        hideLoadingSpinner()
+        hideLoading()
     }
 }

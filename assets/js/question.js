@@ -1,6 +1,6 @@
 import {data} from "./data.js"
 import {chatGptAPI} from "./chatGPTAPI.js"
-import {showLoadingSpinner} from "./loading.js"
+import {showLoading} from "./loading.js"
 
 const $dateDepart = document.querySelector('.dateDepart')
 const $dateArrive = document.querySelector('.dateArrive')
@@ -22,7 +22,7 @@ $button.addEventListener('click', e =>{
         alert("원하는 여행지를 입력해주세요.")
     }
     else {
-        showLoadingSpinner()
+        showLoading()
 
         const userInputData = (`
             출발일: ${$dateDepart.value}, 

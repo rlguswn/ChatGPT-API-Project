@@ -1,5 +1,5 @@
 import {answerOutput} from "./answer.js"
-import {hideLoadingSpinner} from "./loading.js"
+import {hideLoading} from "./loading.js"
 
 const url = "https://estsoft-openai-api.jejucodingcamp.workers.dev/"
 
@@ -31,7 +31,7 @@ export function chatGptAPI(data, userInputData){
         .catch((err) => {
             console.log(err)
             alert("API 통신중 에러가 발생했습니다.")
-            hideLoadingSpinner()
+            hideLoading()
         })
     }
 }
