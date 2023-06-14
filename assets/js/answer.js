@@ -9,8 +9,6 @@ const $answer = document.querySelector('#answer')
 export function answerOutput(jsonString){
     const jsonData = JSON.parse(jsonString)
 
-    // const pattern = /[\[\]{}()"]/g
-
     $answer.innerText = ''
     
     for (let key in jsonData){
@@ -26,7 +24,6 @@ export function answerOutput(jsonString){
             jsonData[key].forEach(item => {
                 valueCell.innerText += item + "\n"
             })
-            // valueCell.innerText = jsonData[key]
             valueCell.classList.add("valueCell")
         }
         hideLoadingSpinner()
