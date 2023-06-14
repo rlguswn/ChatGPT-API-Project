@@ -25,10 +25,10 @@ $button.addEventListener('click', e =>{
         showLoadingSpinner()
 
         const userInputData = (`
-            "출발일:" ${$dateDepart.value}, 
-            "도착일:" ${$dateArrive.value}, 
-            "여행지:" ${$destination.value}, 
-            "특이사항:" ${$attraction.value}
+            출발일: ${$dateDepart.value}, 
+            도착일: ${$dateArrive.value}, 
+            여행지: ${$destination.value}, 
+            특이사항: ${$attraction.value}
         `)
 
     console.log(userInputData)
