@@ -20,7 +20,7 @@ export function answerOutput(jsonString){
             nameCell.classList.add("nameCell")
 
             let valueCell = row.insertCell(1)
-            valueCell.innerText = jsonData[key]
+            valueCell.innerText = jsonData[key].replace(",", "\n")
             valueCell.classList.add("valueCell")
         }
         hideLoadingSpinner()
