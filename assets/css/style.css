@@ -166,11 +166,17 @@ button[type="submit"]:focus {
     padding: 8px;
     border-bottom: 1px solid #ddd;
     border-right: 1px solid #ddd;
+    width: fit-content;
+    text-align: center;
 }
 
 .valueCell {
     padding: 8px;
     border-bottom: 1px solid #ddd;
+    width: fit-content;
+    height: fit-content;
+    text-align: left;
+
 }
 /* /AI로 생성한 답변테이블 */
 
