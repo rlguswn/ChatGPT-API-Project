@@ -31,8 +31,6 @@ $button.addEventListener('click', e =>{
             특이사항: ${$attraction.value}
         `)
 
-    console.log(userInputData)
-
     chatGptAPI(data, userInputData)
     }
 })
