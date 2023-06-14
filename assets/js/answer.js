@@ -3,11 +3,13 @@ import {hideLoadingSpinner} from "./loading.js"
 const $answer = document.querySelector('#answer')
 
 /** void answerOutput
-* chatGPTAPI 응답을 양식에 맞춰 테이블 형태로 생성 
-* @param {array} jsonString 사용자 입력으로 생성된 질문
+ * chatGPTAPI 응답을 양식에 맞춰 테이블 형태로 생성 
+ * @param {array} jsonString 사용자 입력으로 생성된 질문
 */
 export function answerOutput(jsonString){
     const jsonData = JSON.parse(jsonString)
+
+    // const pattern = /[\[\]{}()"]/g
 
     $answer.innerText = ''
     
@@ -20,7 +22,7 @@ export function answerOutput(jsonString){
             nameCell.classList.add("nameCell")
 
             let valueCell = row.insertCell(1)
-            valueCell.innerText = jsonData[key].replace(",", "\n")
+            valueCell.innerText = jsonData[key]
             valueCell.classList.add("valueCell")
         }
         hideLoadingSpinner()
