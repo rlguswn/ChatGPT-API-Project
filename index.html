@@ -13,7 +13,8 @@
 <body>
     <!-- 헤더 -->
     <header>
-        <img src="./assets/img/logo.png" class="headerImg"></img alt="여행 계획 생성기 로고이미지">
+        <h1 class="screen-reader-only">여행 계획 생성기</h1>
+        <img src="./assets/img/logo.png" class="headerImg" alt="여행 계획 생성기 로고이미지">
         <a href="https://github.com/rlguswn/ChatGPT-API-Project">
             <img src="./assets/img/iconGithub.png" class="githubIcon" alt="깃허브 아이콘이미지">
         </a>
@@ -26,23 +27,23 @@
             <form id="userInputForm">
                 <div>
                     <div class="formDepart">
-                        <span>*여행 출발</span>
-                        <input type="date" class="dateDepart">
+                        <label for="dateDepart">*여행 출발</label>
+                        <input type="date" id="dateDepart">
                     </div>
                     <div class="formArrive">
-                        <span>*여행 도착</span>
-                        <input type="date" class="dateArrive">
+                        <label for="dateArrive">*여행 도착</label>
+                        <input type="date" id="dateArrive">
                     </div>
                 </div>
                 
                 <div class="formText">
-                    <span>*원하는 여행지</span>
-                    <input type="text" class="destination" placeholder="ex) 서울, 일본 오사카, 미국 LA">
+                    <label for="destination">*원하는 여행지</label>
+                    <input type="text" id="destination" placeholder="ex) 서울, 일본 오사카, 미국 LA">
                 </div>
                 
                 <div class="formText">
-                    <span>여행지에서 포함시키고 싶은 일정 혹은 장소</span>
-                    <input type="text" class="attraction" placeholder="ex) 광화문, 금각사, 디즈니랜드">
+                    <label for="attraction">여행지에서 포함시키고 싶은 일정 혹은 장소</label>
+                    <input type="text" id="attraction" placeholder="ex) 광화문, 금각사, 디즈니랜드">
                 </div>
 
                 <div class="submitArea">
@@ -59,7 +60,7 @@
 
         <!-- 답변 테이블 -->
         <section class="mainDownside">
-            <span>여행일정</span>
+            <label for="answer">여행일정</label>
             <table id="answer">
                 <tr>
                     <th>여행 계획 만들기 버튼을 누르면 이곳에 여행일정이 출력됩니다.</th>
