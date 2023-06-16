@@ -6,10 +6,11 @@ const $dateDepart = document.querySelector('#dateDepart')
 const $dateArrive = document.querySelector('#dateArrive')
 const $attraction = document.querySelector('#attraction')
 const $destination = document.querySelector('#destination')
-const $button = document.querySelector('.makePlan')
+const $submitBtn = document.querySelector('.makePlan')
+const $clearBtn = document.querySelector('.inputClear')
 
 // 사용자 입력을 토대로 질문 텍스트 작성
-$button.addEventListener('click', e =>{
+$submitBtn.addEventListener('click', e =>{
     e.preventDefault()
     
     if ($dateDepart.value.trim() === "") {
@@ -33,4 +34,13 @@ $button.addEventListener('click', e =>{
 
     chatGptAPI(data, userInputData)
     }
+})
+
+$clearBtn.addEventListener('click', e =>{
+    e.preventDefault()
+
+    $dateDepart.value = ""
+    $dateArrive.value = ""
+    $destination.value = ""
+    $attraction.value = ""
 })
